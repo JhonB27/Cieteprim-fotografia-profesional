@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+label {
+    display:block;
+    margin-top:3px;
+    letter-spacing:2px;
+}
+.formulario {
+    display:block;
+    margin:0 auto;
+    width:450px;
+    color: #FFFFFF; /* color letra*/
+    font-family:Arial;
+}
+form {
+    margin:0 auto;
+    width:400px;
+}
+ 
+input, textarea {
+    width:380px;
+    height:18px;
+    background:#FFFFFF;
+    border:2px solid #f6f6f6;
+    padding:1px;    
+    font-size:12px;
+    color:#000000; /* color del texto introducido*/
+}
+ 
+textarea {
+    height:80px;
+}
+ 
+#submit {
+	font-size: 85%;
+	color: black;
+	float: center;
+    width:385px;
+    height:37px;
+    border:none;
+    margin-top:10px;
+    cursor:pointer;
+	background-color: #2DFFFC; 
+	
+}

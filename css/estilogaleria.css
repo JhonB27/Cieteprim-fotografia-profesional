@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    
+}
+
+h1 { 
+	font-family: "eb-garamond" , bold;
+	color: white;
+    font-weight: 300;
+    text-align: center;
+    padding: 0% 0;
+	margin-top: 3%;
+    font-size: 1.1em;
+	margin-right: 4%;
+	letter-spacing: 2px;
+}
+
+.linea{
+    background:  rgba(6,176,184,0.77);
+	border-radius: 5px;
+    height: 1%;
+    width: 100%;
+    display: block;
+	align-content: center;
+
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* simuevo valor  y rebajo minmax puedo tener mas fotos mas pequeñas*/
+    width: 100%;
+    margin: auto;
+    grid-gap: 10px;
+    padding: 1% 0;
+    overflow: hidden;
+
+}
+
+.galeria img { /* parametros de las imagenes , temaño, alineacion ,etc*/
+    width: 100%;
+    vertical-align: top;
+    height: 100px;
+    object-fit: cover;
+    transition: transform 0.4s;
+    background-color: #0f0c09;
+}
+
+.galeria > a{  /* parametros de la caja de la galeria*/
+    display: block;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 6px #0beaf180;
+
+}
+
+.galeria a:hover img{ /* efecto de distorsion y rotacion con escala de las fotografias*/
+    filter: blur(0.77px);
+    transform: rotate(10deg) scale(1.3);
+}
+
+.light-box { /* este es la caja que se abre al hacer click en cualquier foto*/
+    position: fixed; /* posicion fija de la caja de contenido*/
+    top: 0;
+    left: 0;
+    background: #014f5280;
+    transition: transform .9s ease-in-out; /* duracion y efecto al pasar las fotos*/
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0);
+}
+
+.light-box img{
+    width: 75vw; /* que al hacer click en la imagen ocupe 75 viewport 75% de ancho de la pantalla*/
+    max-height: 75vh; /* que al hacer click en la imagen ocupe el 75% del alto de la pantalla*/
+}
+
+.light-box:target{
+    transform: scale(1); /* la escala de la imagen al hacer click*/
+}
+
+.close {   /* parametros del boton close para las imagenes*/
+    display: block;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    background: turquoise;
+    color: black;
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+.next {   /* parametros del boton flechas  para las imagenes*/
+    display: block;
+    background-color: turquoise;
+    color: black;
+    height: 30px;
+    width: 30px;
+    line-height: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+@media screen and (max-width:400px){   /* parametros para que la galeria sea responsive*/
+    .galeria{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .close{
+        top: 20px;
+        right: 20px;
+    }
+}
+

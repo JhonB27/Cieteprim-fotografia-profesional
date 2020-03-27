@@ -1,0 +1,101 @@
+/* http://www.menucool.com */
+
+#sliderFrame, #sliderFrame div {
+    box-sizing: content-box;
+}
+#sliderFrame 
+{
+	border-radius:10px;
+    width:700px;
+    margin:0 auto; /*alineado al centro*/
+	border: 8px solid rgba(0,0,0,0.1);
+}
+
+#slider, #slider .sliderInner {
+    width:700px;height:306px;/* tamaño de las imagenes en el slider */
+    border-radius:10px;
+}
+
+#slider {
+    background-color:white;
+    position:relative;
+    margin:0 auto; /*alineado al centro*/
+    transform: translate3d(0,0,0);
+    box-shadow: 0px 1px 5px #FFFFFF;
+	
+}
+
+/* estilo de las imagenes cuando tienen link */
+#slider a.imgLink {
+    z-index:2;
+    cursor:pointer;
+    position:absolute;
+    top:0px;left:0px;border:0;padding:0;margin:0;
+    width:100%;height:100%;
+	border-radius:10px;
+}
+
+/* estilo de los mensajes en fotos */
+#slider .mc-caption {
+    position:absolute;
+    width:100%;
+    height:auto;
+	border-radius:10px;
+    padding:10px 0;/* 10px incrementar alto.*/
+    left:0px;
+    bottom:0px;top:auto;
+    overflow:hidden;
+    font: bold 16px/20px "eb-garamond";
+    color:#070707; /* color de letra*/
+    text-align:center;
+    background:rgba(22,222,247,0.3); /* color fondo espacio texto fotos*/
+}
+#slider .mc-caption a { /* color del link en foto*/
+	text-align: center;
+    color:#FFFFFF;
+	background: rgba(0,155,173,0.2);
+	border-radius: 3px;
+	border: 3px solid rgba(0,155,173,0.1);
+}
+#slider .mc-caption a:hover { /* color al que cambia el link en foto*/
+    color:#FF6E00;
+}
+
+
+/* ------ botones  circulares de navegacion slider ------*/
+#slider .navBulletsWrapper  {
+    top:320px;
+    text-align:center;
+    background:none;
+    position:relative;
+    z-index:3;
+}
+
+/* estilo botones */
+#slider .navBulletsWrapper div 
+{
+    width:11px; height:11px;
+    font-size:0;color:white;/*ocultar el número de índice en el elemento de viñeta*/
+    background:transparent url("boton_slider_index.png") no-repeat 0 0; /* imagen de boton */
+    display:inline-block; *display:inline; zoom:1;
+    overflow:hidden;cursor:pointer;
+    margin:0 10px;/* distancia entre botones*/
+}
+
+#slider .navBulletsWrapper .active {background-position:0 -11px;
+width: 12px;
+	height: 12px;
+}
+
+
+/* --------- Otros ------- */
+
+#slider img, #slider>b, #slider a>b {
+    position:absolute; border:none; display:none;
+}
+
+#slider .sliderInner { /* posicion de la barra de botones*/
+    overflow:hidden;
+    position:absolute; top:0; left:0;
+}
+
